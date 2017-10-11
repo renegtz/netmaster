@@ -1,0 +1,8 @@
+{
+    "elements": {
+        "app-root": {},
+        "router-outlet": {},
+        "app-navbar": {}
+    },
+    "attributes": {}
+}
