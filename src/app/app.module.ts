@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { LOCALE_ID } from '@angular/core';
 //rutas
 import  {APP_ROUTING} from './app.routes';
 //servicios
@@ -34,7 +34,8 @@ import { ClientesComponent } from './components/shared/clientes/clientes.compone
   ],
   providers: [
     PersonasService,
-    PagosService
+    PagosService,
+  { provide:  LOCALE_ID, useValue:"es"}
   ],
   bootstrap: [AppComponent]
 })

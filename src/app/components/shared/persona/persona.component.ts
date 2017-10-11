@@ -13,6 +13,8 @@ import {PagosService} from '../../../services/pagos.service'
 export class PersonaComponent implements OnInit {
 persona:any ={};
 
+today: number = Date.now();
+
   constructor(private activatedRoute: ActivatedRoute,
   private _personasService:PersonasService,
 private _pagosService:PagosService ) {
