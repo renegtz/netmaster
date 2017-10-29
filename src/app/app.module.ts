@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LOCALE_ID } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { HttpModule } from '@angular/http';
+
 //rutas
 import  {APP_ROUTING} from './app.routes';
 //servicios
@@ -16,6 +20,8 @@ import { AboutComponent } from './components/shared/about/about.component';
 import { PersonaComponent } from './components/shared/persona/persona.component';
 import { ClientesBuscadosComponent } from './components/shared/clientes-buscados/clientes-buscados.component';
 import { ClientesComponent } from './components/shared/clientes/clientes.component';
+import { CompletarpagoComponent } from './components/shared/completarpago/completarpago.component';
+import { HistorialComponent } from './components/shared/historial/historial.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +32,15 @@ import { ClientesComponent } from './components/shared/clientes/clientes.compone
     AboutComponent,
     PersonaComponent,
     ClientesBuscadosComponent,
-    ClientesComponent
+    ClientesComponent,
+    CompletarpagoComponent,
+    HistorialComponent,
+
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
     APP_ROUTING
   ],
   providers: [

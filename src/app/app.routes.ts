@@ -4,6 +4,8 @@ import {AboutComponent} from './components/shared/about/about.component';
 import {PersonasComponent} from './components/shared/personas/personas.component';
 import {PersonaComponent} from './components/shared/persona/persona.component';
 import {ClientesComponent} from './components/shared/clientes/clientes.component';
+import {CompletarpagoComponent} from './components/shared/completarpago/completarpago.component';
+import {HistorialComponent} from './components/shared/historial/historial.component';
 
 
 
@@ -13,6 +15,10 @@ const APP_ROUTES: Routes = [
 {path: 'personas',component: PersonasComponent},
 {path: 'persona/:id',component: PersonaComponent},
 {path: 'clientes/:nombre',component: ClientesComponent},
+{path: 'pago/:id',component: CompletarpagoComponent},
+{path: 'historial/:id',component: HistorialComponent},
+
+
 {path: '**', pathMatch: 'full', redirectTo: 'home'}
 
 

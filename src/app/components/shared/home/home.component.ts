@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PersonasService} from '../../../services/personas.service';
+import {PagosService} from '../../../services/pagos.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _personasService:PersonasService,
+  private _pagosService:PagosService) { }
 
   ngOnInit() {
+
+    this._personasService.cliente().subscribe();
+    this._pagosService.GetpagosService().subscribe();
   }
 
 }

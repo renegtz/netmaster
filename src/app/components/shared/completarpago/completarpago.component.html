@@ -1,0 +1,70 @@
+<div class="animation fadein fast " >
+  <div class="row">
+      <div class=" col-md-2" >
+
+      </div>
+        <div class=" col-md-8 "  >
+            <div class="card img-thumbnail">
+              <img class="card-img-top " [src]="persona.img"  [alt]="persona.nombre">
+
+                  <div class="card-body">
+                    <h4 class="card-title">NOMBRE: {{persona.nombre | uppercase}}</h4>
+                    <p class="card-title">VELOCIDAD:{{persona.velocidad | uppercase}}</p>
+
+                    <p class="card-title" *ngIf="persona.numerotelefonico !=null">TELEFONO:{{persona.numerotelefonico }}</p>
+                    <p class="card-title" *ngIf="persona.direccion1!=''">DIRECCION 1:{{persona.direccion1 | uppercase}}</p>
+                    <p class="card-title" *ngIf="persona.direccion2!=''">DIRECCION 2:{{persona.direccion2 | uppercase}}</p>
+                    <p class="card-title" >FECHA DE CORTE: {{today |  date:'5 MMMM  y'}}</p>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        MONTO A PAGAR
+                      </span>
+                      <span class="input-group-addon">$</span>
+                      <input type="number"  #texto class="form-control" [value]="persona.precio"  aria-label="monto">
+
+                    </div>
+                        <br>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        FECHA   DE   INCIO
+                      </span>
+                      <span class="input-group-addon">*</span>
+                        <input #fechaI class="  btn-block" type="date" [value]="fecha"  name="fecha">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        FECHA DE TERMINO
+                      </span>
+                      <span class="input-group-addon">*</span>
+                        <input class=" btn-block" #fecha2 type="date" name="fecha">
+                    </div>
+    <br>
+
+                    <br>
+                    <div class="col-md-12">
+                        <div class="alert alert-info" *ngIf="valido==false" role="alert">
+                            {{textoValidar}}
+                        </div>
+                    </div>
+                    <button type="button" (click)="monto(texto.value,fechaI.value, fecha2.value)"  class="btn btn-primary btn-block" >
+                            PAGAR
+                </button>
+                <a [routerLink]="['/personas']" class="btn btn-danger btn-block"> REGRESAR</a>
+
+                  </div>
+
+
+                </div>
+              </div>
+              <div class=" col-md-2" >
+
+              </div>
+
+
+
+  </div>
+
+
+
+    <br>    <br>    <br>    <br>    <br>    <br>

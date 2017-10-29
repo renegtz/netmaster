@@ -1,0 +1,26 @@
+<div class="row">
+    <div class=" col-md-12" >
+
+      <table class="table table-hover table-dark" *ngIf="pago!=null">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">fecha de corte</th>
+            <th scope="col">fecha pagada</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let p of pago;let i=index" >
+
+            <th *ngIf="idCliente==p.idcliente" scope="row">{{i}}  </th>
+            <td *ngIf="idCliente==p.idcliente">{{p.fecha |  date:'dd MMMM  y'}}</td>
+            <td *ngIf="idCliente==p.idcliente">{{p.fechapagoinicio |  date:'dd MMMM  y' }} a {{today[i] |  date:'dd MMMM  y'}}</td>
+            <td *ngIf="idCliente==p.idcliente">PAGADO</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>

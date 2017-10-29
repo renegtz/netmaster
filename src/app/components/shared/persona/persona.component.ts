@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute,Router} from '@angular/router';
 
 import {PersonasService, Persona,Cliente} from '../../../services/personas.service'
 import {PagosService} from '../../../services/pagos.service'
@@ -17,7 +17,8 @@ today: number = Date.now();
 
   constructor(private activatedRoute: ActivatedRoute,
   private _personasService:PersonasService,
-private _pagosService:PagosService ) {
+private _pagosService:PagosService,
+private router:Router ) {
     this.activatedRoute.params.subscribe(params =>{
       console.log(params['id']);
       this.persona = this._personasService.getunaPersona(params['id']);
@@ -25,8 +26,15 @@ private _pagosService:PagosService ) {
     console.log(this.persona);
    }
 
+   pagar(idx:number){
+     this.router.navigate(['/pago',idx])
 
+   }
 
+   historial(idx:number){
+     this.router.navigate(['/historial',idx])
+
+   }
   ngOnInit() {
   }
 

@@ -14,14 +14,14 @@
                     <h4 class="card-title">NOMBRE: {{persona.nombre | uppercase}}</h4>
                     <p class="card-title">VELOCIDAD:{{persona.velocidad | uppercase}}</p>
                     <p class="card-text">PRECIO: ${{persona.precio | number:'1.2-2'}}</p>
-                    <p class="card-title" *ngIf="persona.numeroTelefonico !=null">TELEFONO:{{persona.numeroTelefonico }}</p>
+                    <p class="card-title" *ngIf="persona.numerotelefonico !=null">TELEFONO:{{persona.numerotelefonico }}</p>
                     <p class="card-title" *ngIf="persona.direccion1!=''">DIRECCION 1:{{persona.direccion1 | uppercase}}</p>
                     <p class="card-title" *ngIf="persona.direccion2!=''">DIRECCION 2:{{persona.direccion2 | uppercase}}</p>
                     <p class="card-title" >FECHA DE CORTE: {{today |  date:'5 MMMM  y'}}</p>
 
                     <p class="card-text"><small class="text-muted">{{persona.aparicion | date:'y'}}</small></p>
-                    <button  type="button"  class="btn btn-outline-primary btn-block">HISTORIAL</button>
-                    <button  type="button"  class="btn btn-outline-primary btn-block">PAGAR</button>
+                    <button (click)="historial(persona.idcliente)"  type="button"  class="btn btn-outline-primary btn-block">HISTORIAL</button>
+                    <button (click)="pagar(persona.idcliente)" type="button"  class="btn btn-outline-primary btn-block">PAGAR</button>
 
                     <a [routerLink]="['/personas']" class="btn btn-danger btn-block"> Regresar</a>
 

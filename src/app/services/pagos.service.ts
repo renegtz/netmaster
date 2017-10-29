@@ -1,42 +1,52 @@
 import { Injectable } from '@angular/core';
+import { Http,Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
+
 
 @Injectable()
 export class PagosService {
-  private pagos : Pago[] = [
-{
-  idPago:1,
-  idCliente:1,
-  fecha:"10/10/2017",
-  fechaPagoInicio:"1/10/2017",
-  fechaPagoFinal:"31/10/2017"
-},
-{
-  idPago:2,
-  idCliente:1,
-  fecha:"9/9/2017",
-  fechaPagoInicio:"1/9/2017",
-  fechaPagoFinal:"31/9/2017"
-}
-  ]
+  private url:string="http://localhost:8080/rest/Pagos";
 
-  constructor() {
-    console.log("servicio pago listo!!!")
-    console.log(this.pagos);
+  private pagos : Pago[];
+
+  constructor(private http: Http) {
+
+
   }
 
+
+  GetpagosService(){
+
+  let headers = new Headers();
+
+  return this.http.post(this.url, {headers} )
+  .map(res =>{
+    this.pagos=res.json();
+
+  })
+
 }
 
 
 
+gethistorial():Pago[]{
+  return this.pagos;
+}
 
+getunaPagos(idx:number){
+   return this.pagos[idx-1];
+}
+
+}
 
 
 
 
 export interface Pago{
-  idPago:number;
-idCliente:number;
+idpago:number;
+idcliente:number;
 fecha:string;
-fechaPagoInicio:string;
-fechaPagoFinal:string;
+fechapagoinicio:string;
+fechapagofinal:string;
+monto:number;
 }
