@@ -1,0 +1,62 @@
+<div class="animation fadein fast " >
+  <div class="row">
+      <div class=" col-md-2" >
+      </div>
+        <div class=" col-md-8 "  >
+            <div class="card img-thumbnail">
+
+                  <div class="card-body">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        FECHA   DEL PAGO
+                      </span>
+                      <span class="input-group-addon">*</span>
+                        <input #fechaR class="  btn-block" type="date"   name="fecha">
+                    </div>
+                      <br>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        MONTO A PAGAR
+                      </span>
+                      <span class="input-group-addon">$</span>
+                      <input type="number"  #texto class="form-control" [value]="editar.monto"  aria-label="monto">
+                    </div>
+                        <br>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        FECHA   DE   INCIO
+                      </span>
+                      <span class="input-group-addon">*</span>
+                        <input #fechaI class="  btn-block" type="date"   name="fecha">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        FECHA DE TERMINO
+                      </span>
+                      <span class="input-group-addon">*</span>
+                        <input class=" btn-block" #fecha2 type="date" name="fecha">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-12">
+                        <div class="alert alert-info" *ngIf="valido==false" role="alert">
+                            {{textoValidar}}
+                        </div>
+                    </div>
+                    <button type="button" (click)="monto(texto.value,fechaI.value, fecha2.value,fechaR.value)"  class="btn btn-primary btn-block" >
+                            EDITAR
+                </button>
+                <button type="button" (click)="regresar(editar.idcliente)"  class="btn btn-danger btn-block" >
+                        REGRESAR
+                </button>
+                  </div>
+                </div>
+              </div>
+              <div class=" col-md-2" >
+              </div>
+  </div>
+
+
+
+    <br>    <br>    <br>    <br>    <br>    <br>

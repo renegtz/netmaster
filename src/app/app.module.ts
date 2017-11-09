@@ -22,6 +22,7 @@ import { ClientesBuscadosComponent } from './components/shared/clientes-buscados
 import { ClientesComponent } from './components/shared/clientes/clientes.component';
 import { CompletarpagoComponent } from './components/shared/completarpago/completarpago.component';
 import { HistorialComponent } from './components/shared/historial/historial.component';
+import { EditarComponent } from './components/shared/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HistorialComponent } from './components/shared/historial/historial.comp
     ClientesComponent,
     CompletarpagoComponent,
     HistorialComponent,
+    EditarComponent,
 
   ],
   imports: [

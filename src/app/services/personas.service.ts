@@ -18,7 +18,7 @@ private clientes: Cliente[];
 
   }
 
-  private url:string="http://localhost:8080/rest/ClientesP";
+  private url:string="http://coita.com.mx:8080/rest/ClientesP";
 
   cliente(){
 

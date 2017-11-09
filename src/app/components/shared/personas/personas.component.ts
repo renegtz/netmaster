@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PersonasService, Persona,Cliente} from '../../../services/personas.service';
 import {Router,ActivatedRoute} from '@angular/router';
+
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.component.html',
@@ -28,7 +29,7 @@ getPersonas(){
 }
 
 time() {
-    this.timer = setTimeout(() => this.getPersonas(), 1500);
+    this.timer = setTimeout(() => this.getPersonas(), 500);
 }
 
 

@@ -20,10 +20,8 @@ today: number = Date.now();
 private _pagosService:PagosService,
 private router:Router ) {
     this.activatedRoute.params.subscribe(params =>{
-      console.log(params['id']);
       this.persona = this._personasService.getunaPersona(params['id']);
     });
-    console.log(this.persona);
    }
 
    pagar(idx:number){
